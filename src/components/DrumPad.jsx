@@ -10,9 +10,11 @@ const StyledButton = styled.button`
   background-color: ${theme.lightGray};
   color: ${theme.white};
   border: none;
-  margin: 0.5rem;
   padding: 3rem;
   font-size: 4rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 `;
 class DrumPad extends React.Component {
   constructor(props) {
