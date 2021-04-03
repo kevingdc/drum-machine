@@ -19,6 +19,11 @@ class DrumPad extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyDown);
   }
 
   handleClick() {
@@ -30,20 +35,29 @@ class DrumPad extends React.Component {
     this.props.setDisplayText(description);
   }
 
+  handleKeyDown(event) {
+    if (event.key.toUpperCase() === this.props.text) {
+      this.handleClick();
+    }
+  }
+
   render() {
     const { text, audio, description } = this.props;
     return (
-      <div>
+      <div onKeyUp={this.handleKeyUp}>
         <StyledButton
           id={description}
           className="drum-pad"
           onClick={this.handleClick}
         >
           {text}
+          <audio
+            id={text}
+            className="clip"
+            src={audio}
+            type="audio/mpeg"
+          ></audio>
         </StyledButton>
-        <audio id={text} className="clip" type="audio/mpeg">
-          <source src={audio}></source>
-        </audio>
       </div>
     );
   }
