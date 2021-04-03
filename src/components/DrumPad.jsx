@@ -15,6 +15,16 @@ const StyledButton = styled.button`
   width: 100%;
   height: 100%;
   text-align: center;
+  border: 2px solid ${theme.lightGray};
+
+  :hover {
+    background-color: ${theme.primary};
+    border-color: ${theme.primary};
+  }
+
+  :active {
+    background-color: ${theme.darkGray};
+  }
 `;
 class DrumPad extends React.Component {
   constructor(props) {
