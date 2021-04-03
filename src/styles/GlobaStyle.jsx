@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import { theme } from "./variables";
+
 const GlobalStyle = createGlobalStyle`
   :root {
     font-size: 62.5%;
@@ -13,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 1.6rem;
     font-family: "Roboto", sans-serif;
+    background-color: ${theme.black};
+    color: ${theme.white};
   }
 `;
 

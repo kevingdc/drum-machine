@@ -1,19 +1,22 @@
-import React from "react";
+import styled from "styled-components";
 
 import DrumMachine from "../components/DrumMachine";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+`;
 
-  render() {
-    return (
-      <div>
-        <DrumMachine />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <StyledDiv>
+      <DrumMachine />
+    </StyledDiv>
+  );
+};
 
 export default App;
