@@ -38,6 +38,10 @@ class DrumPad extends React.Component {
     document.addEventListener("keydown", this.handleKeyDown);
   }
 
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyDown);
+  }
+
   handleClick() {
     const { text, description } = this.props;
 
